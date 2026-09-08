@@ -1,0 +1,84 @@
+{
+  "distraction_apps": [
+    "Instagram",
+    "Facebook",
+    "Telegram",
+    "TikTok",
+    "Twitter",
+    "X",
+    "Snapchat",
+    "Reddit",
+    "Discord"
+  ],
+  "focus_apps": [
+    "Visual Studio Code",
+    "Code",
+    "Xcode",
+    "Terminal",
+    "iTerm",
+    "PyCharm",
+    "Jupyter",
+    "Preview",
+    "Notes",
+    "Notion",
+    "Obsidian",
+    "Numbers",
+    "Pages",
+    "Keynote",
+    "Microsoft Word",
+    "Microsoft Excel"
+  ],
+  "distraction_sites": [
+    "youtube.com",
+    "instagram.com",
+    "facebook.com",
+    "web.telegram.org",
+    "tiktok.com",
+    "twitter.com",
+    "x.com",
+    "reddit.com",
+    "netflix.com",
+    "twitch.tv"
+  ],
+  "focus_sites": [
+    "stackoverflow.com",
+    "github.com",
+    "docs.python.org",
+    "chatgpt.com",
+    "claude.ai",
+    "coursera.org",
+    "leetcode.com",
+    "kaggle.com",
+    "arxiv.org",
+    "geeksforgeeks.org"
+  ],
+  "distraction_title_keywords": [
+    "- YouTube",
+    "\u2022 Instagram",
+    "| Facebook",
+    "/ X",
+    "on X",
+    "- TikTok",
+    "- Reddit",
+    "Netflix",
+    "- Twitch"
+  ],
+  "focus_title_keywords": [
+    "- Stack Overflow",
+    "GitHub",
+    "- ChatGPT",
+    "- Claude",
+    "- Coursera",
+    "- LeetCode",
+    "- Kaggle",
+    "GeeksforGeeks"
+  ],
+  "browsers": [
+    "Safari",
+    "Google Chrome",
+    "Chrome",
+    "Arc",
+    "Firefox",
+    "Brave Browser"
+  ]
+}
