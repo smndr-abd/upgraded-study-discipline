@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-glyph">◆</span>
+    <div>
+      <h1>Study Ledger</h1>
+      <p class="brand-sub">Goal: {{ goal_minutes }} focused minutes / day</p>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <section class="stat-row">
+    <div class="stat-card stat-streak">
+      <span class="stat-label">Current streak</span>
+      <span class="stat-value" id="streakValue">—</span>
+      <span class="stat-unit">days unbroken</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Longest streak</span>
+      <span class="stat-value" id="longestValue">—</span>
+      <span class="stat-unit">days</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Today</span>
+      <span class="stat-value" id="todayFocusValue">—</span>
+      <span class="stat-unit" id="todayGoalUnit">of goal</span>
+    </div>
+    <div class="stat-card stat-distraction">
+      <span class="stat-label">Today's distraction</span>
+      <span class="stat-value" id="todayDistractionValue">—</span>
+      <span class="stat-unit">lost to it</span>
+    </div>
+  </section>
+
+  <section class="progress-panel">
+    <div class="progress-head">
+      <span>Today's progress</span>
+      <span id="progressFraction" class="mono">—</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </section>
+
+  <section class="chain-panel">
+    <div class="panel-head">
+      <h2>The chain</h2>
+      <span class="panel-sub">last 12 weeks · don't break it</span>
+    </div>
+    <div class="chain-scroll">
+      <div class="chain-grid" id="chainGrid"></div>
+      <svg class="chain-links" id="chainLinks"></svg>
+    </div>
+    <div class="chain-legend">
+      <span>Less</span>
+      <span class="legend-swatch legend-0"></span>
+      <span class="legend-swatch legend-1"></span>
+      <span class="legend-swatch legend-2"></span>
+      <span class="legend-swatch legend-3"></span>
+      <span>More</span>
+    </div>
+  </section>
+
+  <section class="breakdown-panel">
+    <div class="panel-head">
+      <h2>Today's breakdown</h2>
+      <span class="panel-sub">by app</span>
+    </div>
+    <div id="breakdownList" class="breakdown-list"></div>
+  </section>
+
+</main>
+
+<footer class="footer-note">
+  Live totals reflect closed sessions — whatever you're doing right now updates once you switch away from it.
+</footer>
+
+<script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>
