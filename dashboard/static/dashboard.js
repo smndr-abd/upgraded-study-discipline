@@ -146,4 +146,4 @@ window.addEventListener('resize', () => {
 });
 
 refreshAll();
-setInterval(refreshAll, 30000); // keep it live without needing a manual refresh
+setInterval(refreshAll, 30000); // keep it live without making a manual refresh
