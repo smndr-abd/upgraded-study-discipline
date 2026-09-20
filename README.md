@@ -100,3 +100,5 @@ No code changes needed — the tracker re-reads this file on each poll.
 - Launch-at-login (via a LaunchAgent plist) so it starts automatically
 
 ## Created by Samandar Abudjabbar
+
+Link for LinkedIn https://www.linkedin.com/in/samandar-abdujabbarov/
