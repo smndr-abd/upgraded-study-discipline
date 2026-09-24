@@ -27,7 +27,6 @@ body {
 
 .mono { font-family: var(--font-mono); }
 
-/* ---------- Topbar ---------- */
 .topbar {
   padding: 26px 32px 20px;
   border-bottom: 1px solid var(--border);
@@ -35,10 +34,7 @@ body {
 
 .brand { display: flex; align-items: center; gap: 14px; }
 
-.brand-glyph {
-  color: var(--amber);
-  font-size: 22px;
-}
+.brand-glyph { color: var(--amber); font-size: 22px; }
 
 .brand h1 {
   font-family: var(--font-display);
@@ -54,7 +50,6 @@ body {
   font-family: var(--font-mono);
 }
 
-/* ---------- Layout ---------- */
 .layout {
   max-width: 920px;
   margin: 0 auto;
@@ -64,7 +59,6 @@ body {
   gap: 24px;
 }
 
-/* ---------- Stat row ---------- */
 .stat-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -92,6 +86,9 @@ body {
   font-family: var(--font-display);
   font-size: 30px;
   font-weight: 700;
+  /* number ticks are handled by JS re-rendering text every animation frame;
+     a subtle color transition softens the moment a new value lands */
+  transition: color 0.2s ease;
 }
 
 .stat-unit {
@@ -103,7 +100,6 @@ body {
 .stat-streak .stat-value { color: var(--amber); }
 .stat-distraction .stat-value { color: var(--rose); }
 
-/* ---------- Progress ---------- */
 .progress-panel {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -131,10 +127,9 @@ body {
   width: 0%;
   background: linear-gradient(90deg, var(--amber-dim), var(--amber));
   border-radius: 100px;
-  transition: width 0.5s ease;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ---------- Panels (shared) ---------- */
 .chain-panel, .breakdown-panel {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -162,7 +157,6 @@ body {
   font-family: var(--font-mono);
 }
 
-/* ---------- Chain grid ---------- */
 .chain-scroll {
   position: relative;
   overflow-x: auto;
@@ -196,6 +190,7 @@ body {
   border-radius: 3px;
   background: var(--panel-raised);
   border: 1px solid var(--border);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .chain-cell.future { visibility: hidden; }
@@ -224,7 +219,6 @@ body {
 .legend-2 { background: #6B5A2A; }
 .legend-3 { background: var(--amber); }
 
-/* ---------- Breakdown list ---------- */
 .breakdown-list { display: flex; flex-direction: column; gap: 10px; }
 
 .breakdown-row {
@@ -254,6 +248,7 @@ body {
   display: block;
   height: 100%;
   border-radius: 100px;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .breakdown-bar-fill.focus { background: var(--amber); }
@@ -272,7 +267,6 @@ body {
   font-family: var(--font-mono);
 }
 
-/* ---------- Footer ---------- */
 .footer-note {
   text-align: center;
   padding: 18px;
@@ -282,12 +276,11 @@ body {
   border-top: 1px solid var(--border);
 }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 720px) {
   .stat-row { grid-template-columns: repeat(2, 1fr); }
   .breakdown-row { grid-template-columns: 100px 1fr 60px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .progress-fill { transition: none; }
+  .progress-fill, .breakdown-bar-fill, .chain-cell, .stat-value { transition: none; }
 }
